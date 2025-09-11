@@ -23,11 +23,13 @@ Hi, I'm Yasemin Derin and I'm a 10th grader in Hisar Schools. I will upload my p
 
   This is a documentation of problems I have faced and how I overcame them
 ## Problems I faced:
-I faced problems such as my github site not opening and not being able to upload videos.
+Github: I faced problems such as my github site not opening and not being able to upload videos.
+Scratch: I faced problems with making the squares show all at the same time. 
 ## How I fixed them:
-First, I analyzed what the problem was.
+Github: First, I analyzed what the problem was.
 Then, I tried to think of ways I can fix them and asked for help from my teacher and friend. 
 After that, I applied the solution such as trying to upload my video from google drive instead of saved folders.
+Scartch: I fixed this problem by adding directions to every square that shpuld have been on the screen and placed them accordingly. 
 </details>
 
 <details>
