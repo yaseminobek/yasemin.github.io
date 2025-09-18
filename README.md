@@ -28,16 +28,18 @@ Github: I faced problems such as my github site not opening and not being able t
 Scratch: I faced problems with making the squares show all at the same time. 
 
 Clock: I forgot to put @State in front of minuteSeg, so the hand didn’t update
-The hour kept going past 24
+       The hour kept going past 24
+Tic Tac Toe: After a player won, the app still let us tap more squares and the label sometimes changed to the next player’s turn.
 ## How I fixed them:
 Github: First, I analyzed what the problem was.
-Then, I tried to think of ways I can fix them and asked for help from my teacher and friend. 
-After that, I applied the solution such as trying to upload my video from google drive instead of saved folders.
+        Then, I tried to think of ways I can fix them and asked for help from my teacher and friend. 
+        After that, I applied the solution such as trying to upload my video from google drive instead of saved folders.
 
 Scartch: I fixed this problem by adding directions to every square that shpuld have been on the screen and placed them accordingly. 
 
 Clock:I fixed it by adding @State.
-I fixed it by using (hour + 1) % 24 to wrap back to 0.
+      I fixed it by using (hour + 1) % 24 to wrap back to 0.
+Tic Tac Toe: I set gameOver = true in checkWinner() and only allow taps with if !gameOver && text.wrappedValue.isEmpty { ... }; call checkWinner() before switching turns.
 
 </details>
 
