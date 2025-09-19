@@ -31,6 +31,8 @@ Clock: I forgot to put @State in front of minuteSeg, so the hand didn’t update
        The hour kept going past 24.
 
 Tic Tac Toe: After a player won, the app still let us tap more squares and the label sometimes changed to the next player’s turn.
+
+Face: I first set the hair color on the wrong shape and colored the face instead of the hair.
 ## How I fixed them:
 Github: First, I analyzed what the problem was.
         Then, I tried to think of ways I can fix them and asked for help from my teacher and friend. 
@@ -42,6 +44,8 @@ Clock:I fixed it by adding @State.
       I fixed it by using (hour + 1) % 24 to wrap back to 0.
 
 Tic Tac Toe: I set gameOver = true in checkWinner() and only allow taps with if !gameOver && text.wrappedValue.isEmpty { ... }; call checkWinner() before switching turns.
+
+Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the RoundedRectangle that makes the hairs silhouette, then I defined let hair = Color(...) so that the same colors applied every part of it. 
 
 </details>
 
