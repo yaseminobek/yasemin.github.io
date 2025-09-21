@@ -20,6 +20,8 @@ Hi, I'm Yasemin Derin and I'm a 10th grader in Hisar Schools. I will upload my p
 https://www.figma.com/board/yGRg5OnMyrHJ7PAcD2pFjA/Analog-clock?node-id=0-1&t=hJreJNwbth6Pv1fB-1
 <img width="784" height="447" alt="Screenshot 2025-09-21 at 23 51 10" src="https://github.com/user-attachments/assets/840f8d1a-869b-42d6-9114-f29633ea088c" />
 
+https://drive.google.com/file/d/1BeLdLmb7uti2GuvbFwYbLnxzKCvLga6Q/view?usp=sharing
+
 </details>
 
 <details>
@@ -68,6 +70,19 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
  So to summarise, Creative Development is about working together, designing with purpose, coding carefully, and fixing mistakes to create programs that solve problems effectively.
 
 
+</details>
+
+<details>
+<summary>-Reflection questions</summary>
+Our target audience is teenagers who prefer simple and plain clocks.
+
+ Our design choices support this audiencer because it consists of neutral colors such as green, white and black. And it doesn't have any design on it, making it simple and plain.
+
+ While collecting examples in FigJam we saw several minimal analog clocks. These inspired us to keep the face uncluttered, use strong contrast for readability, and place the numbers with simple offsets instead of fancy graphics.
+
+The hardest part was making the clock hands pivot correctly. I had to offset each Capsule so its base stayed at the center before applying the rotation angle, otherwise the hands spun around the wrong point.
+
+I would add a simple color chooser so users can pick their own style palette.
 </details>
 
 
