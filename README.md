@@ -74,15 +74,23 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 
 <details>
 <summary>-Reflection questions</summary>
-Our target audience is teenagers who prefer simple and plain clocks.
+1.Our target audience is teenagers who prefer simple and plain clocks.
 
- Our design choices support this audiencer because it consists of neutral colors such as green, white and black. And it doesn't have any design on it, making it simple and plain.
+2.Our design choices support this audiencer because it consists of neutral colors such as green, white and black. And it doesn't have any design on it, making it simple and plain.
 
- While collecting examples in FigJam we saw several minimal analog clocks. These inspired us to keep the face uncluttered, use strong contrast for readability, and place the numbers with simple offsets instead of fancy graphics.
+3.While collecting examples in FigJam we saw several minimal analog clocks. These inspired us to keep the face uncluttered, use strong contrast for readability, and place the numbers with simple offsets instead of fancy graphics.
 
-The hardest part was making the clock hands pivot correctly. I had to offset each Capsule so its base stayed at the center before applying the rotation angle, otherwise the hands spun around the wrong point.
+4.The hardest part was making the clock hands pivot correctly. I had to offset each Capsule so its base stayed at the center before applying the rotation angle, otherwise the hands spun around the wrong point.
 
-I would add a simple color chooser so users can pick their own style palette.
+5.I would add a simple color chooser so users can pick their own style palette.
+
+1.A Button is a control that gives tap feedback, .onTapGesture just watches for a tap on any view.
+
+2.Different people like or need different ways to change the clock, so it’s easier for everyone.
+
+3.The slider because it’s quick to set the hour.
+
+4.The clock updates only when you tap or slide, so it runs when events happen.
 </details>
 
 
