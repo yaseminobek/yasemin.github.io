@@ -22,6 +22,12 @@ https://www.figma.com/board/yGRg5OnMyrHJ7PAcD2pFjA/Analog-clock?node-id=0-1&t=hJ
 
 https://drive.google.com/file/d/1BeLdLmb7uti2GuvbFwYbLnxzKCvLga6Q/view?usp=sharing
 
+https://drive.google.com/file/d/1Bp52wNUulnQTn6LugeuEVZ6VQda_L_Tw/view?usp=sharing
+
+https://drive.google.com/file/d/1U32qRvb4XcKD1ZyJpbF06eDG1SkGUiYo/view?usp=sharing
+
+https://drive.google.com/file/d/1T-KeqEfNtT7xn75HJuDDtU1EPKxQkSdV/view?usp=sharing
+
 </details>
 
 <details>
