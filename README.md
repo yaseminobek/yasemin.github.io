@@ -91,6 +91,21 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 3.The slider because it’s quick to set the hour.
 
 4.The clock updates only when you tap or slide, so it runs when events happen.
+
+1.I learned that ForEach can put the 12 items (numbers, dots, or sport emojis) around the circle without writing each one by hand.
+
+
+2.I learned that random can pick a random hour and 15-minute segment. In the color-dots mode, the dot colors also change randomly each time you interact with the clock.
+
+
+3.I learned how to make the clock react: one tap adds 15 minutes, a double tap resets it, the buttons change the hour up or down, and the slider lets me choose an hour.
+
+
+4.I learned how to add three different views and switch between them with top buttons: Numbers, Dots, and Sports.
+
+
+
+
 </details>
 
 
