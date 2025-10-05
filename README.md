@@ -26,7 +26,10 @@ https://drive.google.com/file/d/1Bp52wNUulnQTn6LugeuEVZ6VQda_L_Tw/view?usp=shari
 
 https://drive.google.com/file/d/1U32qRvb4XcKD1ZyJpbF06eDG1SkGUiYo/view?usp=sharing
 
-https://drive.google.com/file/d/1T-KeqEfNtT7xn75HJuDDtU1EPKxQkSdV/view?usp=sharing
+https://drive.google.com/file/d/1T-KeqEfNtT7xn75HJuDDtU1EPKxQkSdV/view?usp=sha<img width="579" height="360" alt="Screenshot 2025-10-06 at 00 02 30" src="https://github.com/user-attachments/assets/58cf16b9-c4a6-4d3e-bc46-79f189422004" />
+
+
+<img width="927" height="590" alt="Screenshot 2025-10-06 at 00 01 53" src="https://github.com/user-attachments/assets/d950ef3d-6d69-4822-b998-0fa4a4fd3281" />
 
 </details>
 
@@ -101,6 +104,7 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 1.I learned that ForEach can put the 12 items (numbers, dots, or sport emojis) around the circle without writing each one by hand.
 
 
+
 2.I learned that random can pick a random hour and 15-minute segment. In the color-dots mode, the dot colors also change randomly each time you interact with the clock.
 
 
@@ -108,6 +112,10 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 
 
 4.I learned how to add three different views and switch between them with top buttons: Numbers, Dots, and Sports.
+
+1.I learned that computers use bits (0 and 1) and that binary uses the 8-4-2-1 place values.
+2.I practiced converting numbers, like 0110₂ = 6 and 12₁₀ = 1100₂.
+3.In Swift, I built a small 4-bit counter that shows decimal and binary and wraps to 0 after 15 (overflow) using (id + 1) % 16.
 
 
 
