@@ -102,6 +102,15 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 2.I practiced converting numbers, like 0110₂ = 6 and 12₁₀ = 1100₂.
 3.In Swift, I built a small 4-bit counter that shows decimal and binary and wraps to 0 after 15 (overflow) using (id + 1) % 16.
 
+1.Overflow:
+In my app, overflow happens when I add more than five scoops. The cone resets to empty when this happens. 
+
+2.Abstraction:
+The cone shows memory, and each scoop is like stored data. It’s a simple way to see how computers hold and lose information.
+
+3.Binary & Compression:
+I learned that binary numbers have limits. When we pass the limit, data resets or gets lost—like when the cone overflows.
+
 
 
 
