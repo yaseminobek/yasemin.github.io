@@ -112,6 +112,8 @@ The cone shows memory, and each scoop is like stored data. It’s a simple way t
 3.Binary & Compression:
 I learned that binary numbers have limits. When we pass the limit, data resets or gets lost—like when the cone overflows.
 
+Frog Escape Challenge:
+In my Clock Game, I learned how to use @State, timers, and simple logic to make a game that resets when time runs out. It helped me understand overflow and practice if and else.
 
 
 
