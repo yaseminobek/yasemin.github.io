@@ -28,6 +28,7 @@ https://drive.google.com/file/d/1U32qRvb4XcKD1ZyJpbF06eDG1SkGUiYo/view?usp=shari
 
 https://drive.google.com/file/d/1T-KeqEfNtT7xn75HJuDDtU1EPKxQkSdV/view?usp=sha<img width="579" height="360" alt="Screenshot 2025-10-06 at 00 02 30" src="https://github.com/user-attachments/assets/58cf16b9-c4a6-4d3e-bc46-79f189422004" />
 
+Data Compression: https://docs.google.com/document/d/1QLFtNUki7_yCDZQ8Zv-EKBLR279OlJ4YPLcjmfwzvLo/edit?usp=sharing
 
 <img width="927" height="590" alt="Screenshot 2025-10-06 at 00 01 53" src="https://github.com/user-attachments/assets/d950ef3d-6d69-4822-b998-0fa4a4fd3281" />
 
