@@ -14,8 +14,7 @@ Hi, I'm Yasemin Derin and I'm a 10th grader in Hisar Schools. I will upload my p
 <summary>-My Projects</summary>
 
   *[You can see my video from here](https://drive.google.com/file/d/1CfISpXEdErXukGdaux8WMcPuQCSN4EzL/view?usp=sharing]
-
-*https://scratch.mit.edu/projects/1213290539/editor
+https://scratch.mit.edu/projects/1232391798/
 
 https://www.figma.com/board/yGRg5OnMyrHJ7PAcD2pFjA/Analog-clock?node-id=0-1&t=hJreJNwbth6Pv1fB-1
 <img width="784" height="447" alt="Screenshot 2025-09-21 at 23 51 10" src="https://github.com/user-attachments/assets/840f8d1a-869b-42d6-9114-f29633ea088c" />
