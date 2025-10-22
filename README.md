@@ -47,7 +47,7 @@ Candy Shop Simulation Screenshot:
 
 Bit Binary Counter Console:
 <img width="794" height="556" alt="Screenshot 2025-10-22 at 21 47 53" src="https://github.com/user-attachments/assets/673024f9-a148-4431-b6f4-079e5e65283b" />
-
+Extracting information from data: https://docs.google.com/document/d/1fcESJzATuzQaV0ncaudRc0FqWIG0rbNHiQt28-d-3Fs/edit?tab=t.0#heading=h.7jrsmptdjn6i
 </details>
 
 <details>
