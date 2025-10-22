@@ -85,7 +85,8 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 
 <details>
 <summary>-Reflection questions</summary>
-1.Our target audience is teenagers who prefer simple and plain clocks.
+Clock 3:
+ 1.Our target audience is teenagers who prefer simple and plain clocks.
 
 2.Our design choices support this audiencer because it consists of neutral colors such as green, white and black. And it doesn't have any design on it, making it simple and plain.
 
@@ -95,6 +96,7 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 
 5.I would add a simple color chooser so users can pick their own style palette.
 
+Clock 2:
 1.A Button is a control that gives tap feedback, .onTapGesture just watches for a tap on any view.
 
 2.Different people like or need different ways to change the clock, so it’s easier for everyone.
@@ -103,6 +105,7 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 
 4.The clock updates only when you tap or slide, so it runs when events happen.
 
+Clock 5:
 1.I learned that ForEach can put the 12 items (numbers, dots, or sport emojis) around the circle without writing each one by hand.
 
 
@@ -115,10 +118,12 @@ Face: I fixed it by keeping the Capsule as (skin) and putting (hair) ont the Rou
 
 4.I learned how to add three different views and switch between them with top buttons: Numbers, Dots, and Sports.
 
+Binary:
 1.I learned that computers use bits (0 and 1) and that binary uses the 8-4-2-1 place values.
 2.I practiced converting numbers, like 0110₂ = 6 and 12₁₀ = 1100₂.
 3.In Swift, I built a small 4-bit counter that shows decimal and binary and wraps to 0 after 15 (overflow) using (id + 1) % 16.
 
+Ice Cream:
 1.Overflow:
 In my app, overflow happens when I add more than five scoops. The cone resets to empty when this happens. 
 
