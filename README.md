@@ -39,6 +39,11 @@ apcsp-part1-data-practice
 “This exercise is inspired by the AP CSP learning objectives (Big Idea 2), but all data and examples are original classroom material created for practice purposes.”:
 https://docs.google.com/document/d/1SYXB7NRoQkhnSHEKCEKei7ybchmrwjH-jWkH5Q1WSpk/edit?usp=sharing
 
+Candy Shop Simulation Video:
+https://drive.google.com/file/d/1BwNzb7UE3lmqCs6l1X6cZfuzSefMc3s1/view?usp=sharing
+Candy Shop Simulation Screenshot:
+
+<img width="960" height="716" alt="Screenshot 2025-10-22 at 21 29 53" src="https://github.com/user-attachments/assets/206aadfb-f61d-4448-941d-7cabf923c456" />
 
 </details>
 
