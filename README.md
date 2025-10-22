@@ -34,6 +34,12 @@ https://drive.google.com/drive/folders/1mOU1mwLQAHplIshOi4BHngeB8AsP0QiA?usp=sha
 <img width="927" height="590" alt="Screenshot 2025-10-06 at 00 01 53" src="https://github.com/user-attachments/assets/d950ef3d-6d69-4822-b998-0fa4a4fd3281" />
 
 My frog escape challenge video: https://drive.google.com/file/d/1lDGcnsO5-YwSSu06hlzXrt4zp5sgDN44/view?usp=sharing
+
+apcsp-part1-data-practice
+“This exercise is inspired by the AP CSP learning objectives (Big Idea 2), but all data and examples are original classroom material created for practice purposes.”:
+https://docs.google.com/document/d/1SYXB7NRoQkhnSHEKCEKei7ybchmrwjH-jWkH5Q1WSpk/edit?usp=sharing
+
+
 </details>
 
 <details>
