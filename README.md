@@ -134,6 +134,51 @@ In my Clock Game, I learned how to use @State, timers, and simple logic to make 
 
 
 </details>
+<details>
+<summary>-Big Idea 1</summary>
+Big Idea 1: Creative Development is about how computer programs are built and improved through collaboration, design, testing, and error correction. 1.1 Collaboration Teamwork and problem-solving are essential in programming. Developers often collaborate with users and other programmers through methods like pair programming, project management tools, or platforms like GitHub. This ensures diverse perspectives and helps avoid bias. 1.2 Program Function and Purpose Every program has a function: it takes inputs (like text, images, or sounds), processes them, and produces outputs (like results, visuals, or feedback). The purpose is to solve real-world problems, whether through apps, devices, or systems. 1.3 Program Design and Development Designing programs involves planning with algorithms and pseudocode, then turning those into working code. Programmers test, gather data, and refine their solutions. Documentation and comments are also important to explain how and why the program works, making it easier for others to understand and improve. 1.4 Identifying and Correcting Errors Errors happen in coding—syntax errors, logic errors, or run-time errors. Debugging involves testing, error handling, and using tools like debuggers or extra print statements. This process helps ensure programs run correctly and efficiently.
+So to summarise, Creative Development is about working together, designing with purpose, coding carefully, and fixing mistakes to create programs that solve problems effectively.
+
+https://drive.google.com/file/d/1CfISpXEdErXukGdaux8WMcPuQCSN4EzL/view?usp=sharing
+</details>
+
+<details>
+<summary>-Big Idea 2</summary>
+2.1 Binary Numbers:
+Main idea: Computers represent all data using the binary system, which only uses 0s and 1s. Each digit’s position represents a power of 2.
+Example or concept learned: For instance, the binary number 0101 equals 5 in decimal because it represents 08 + 14 + 02 + 11 = 5.
+
+Reflection: I learned that computers can only process data in binary, which means everything from images to songs is stored using combinations of 0s and 1s. This matters because it shows how all digital information is simplified into a universal language.This is fascinating because it shows how complex systems are built on a very simple foundation.
+
+Question: How do computers convert complex information like colors and sounds into binary so quickly and accurately?
+
+2.2 Data Compression:
+Main idea: Data compression reduces the size of digital files by removing repetition or unnecessary information so they use less storage and transmit faster.
+Example or concept learned: I learned about Run-Length Encoding (RLE), which shortens repeated bits like 11110000 : (4,1)(4,0). Lossy compression (like JPEG or MP3) removes details humans don’t notice, while lossless compression keeps every bit of original data.
+
+Reflection: I found it interesting that compression allows faster file sharing but sometimes sacrifices quality. It made me realize how important compression is for things like streaming and texting. I was surprised that lossy compression permanently deletes data, which shows the trade-off between saving space and keeping perfect quality.
+
+Question: Is there a way to design a compression method that keeps all the data (like lossless) but is as efficient as lossy compression?
+
+2.3 Extracting Information From Data:
+Main idea: Before data can be used, computers must clean, organize, and validate it to remove errors and inconsistencies. This process is called data cleaning and helps ensure accuracy in analysis.
+Example or concept learned: For example, survey results like “AP CSP,” “ap csp,” and “AP Computer Science Principles” must be cleaned to be treated as the same response.
+
+Reflection: I realized that data cleaning is one of the most important steps in data science because raw data is often messy or biased. This matters in real life when analyzing surveys, polls, or research results. Without cleaning, we could draw wrong conclusions or make poor decisions based on faulty information.
+
+Question: Can machine learning algorithms fully clean and organize data automatically, or will humans always be needed for context and judgment?
+
+2.4 Transforming Data
+Main idea: Transforming data means modifying, combining, or visualizing data to make it more useful and understandable. This often involves programs like Google Sheets or Excel, or even programming tools that help analyze trends.
+Example or concept learned: For instance, spreadsheet functions can calculate averages, and graphs or charts can visualize trends in large datasets for better decision making.
+
+Reflection: I learned that transforming and visualizing data helps people quickly identify patterns and make data-driven decisions. This is how companies, scientists, and governments use data in the real world. It’s interesting that behind every simple graph or chart, there’s a huge process of organizing and transforming information.
+
+Question: How do big tech companies handle transforming massive data sets, like millions of users’ search histories, in real time?
+
+My Video:
+https://drive.google.com/file/d/11Jcfd-ekgKxisfiRhTucz6YQ5uREFhAj/view?usp=sharing
+
 
 
 
