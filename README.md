@@ -47,6 +47,72 @@ Candy Shop Simulation Screenshot:
 Bit Binary Counter Console:
 <img width="794" height="556" alt="Screenshot 2025-10-22 at 21 47 53" src="https://github.com/user-attachments/assets/673024f9-a148-4431-b6f4-079e5e65283b" />
 Extracting information from data: https://docs.google.com/document/d/1fcESJzATuzQaV0ncaudRc0FqWIG0rbNHiQt28-d-3Fs/edit?tab=t.0#heading=h.7jrsmptdjn6i
+
+Hot Chocolate Pseudocode:
+.
+PROCEDURE runHotChocolate
+
+    SET initialTemp ← 20
+    SET temp ← initialTemp
+
+    FOR minute ← 1 TO 20
+
+        SET temp ← temp + 5
+        DISPLAY "Minute " + minute + " → " + temp + "°C"
+
+        IF temp < 50 THEN
+            DISPLAY "→ The drink is still cold."
+        ELSE IF temp <= 70 THEN
+            DISPLAY "→ The drink is ready to serve!"
+        ELSE IF temp <= 80 THEN
+            DISPLAY "→ Too hot! Wait before drinking."
+        ELSE
+            DISPLAY "⚠︎ Machine auto-stop activated!"
+            BREAK
+        END IF
+
+    END FOR
+
+    SET change ← temp - initialTemp
+    DISPLAY "Total temperature change: " + change + "°C"
+
+END PROCEDURE
+
+CALL runHotChocolate
+
+
+.
+
+
+
+Hot Chocolate Code:
+.
+
+func runHotChocolate() {
+    var initialTemp = 20
+    var temp = initialTemp
+
+    for minute in 1...20 {
+        temp += 5
+        print("Minute \(minute) → \(temp)°C")
+
+        if temp < 50 {
+            print("→ The drink is still cold.")
+        } else if temp <= 70 {
+            print("→ The drink is ready to serve!")
+        } else if temp <= 80 {
+            print("→ Too hot! Wait before drinking.")
+        } else {
+            print("⚠︎ Machine auto-stop activated!")
+            break
+        }
+    }
+
+    let change = temp - initialTemp
+    print("Total temperature change: \(change)°C")
+}
+
+runHotChocolate()
 </details>
 
 <details>
