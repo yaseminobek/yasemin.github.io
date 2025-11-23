@@ -121,6 +121,9 @@ https://docs.google.com/document/d/1Vq1MGl1c_whXEwaDXhPayGlMM0rSYmyNZHXwtbjBN3E/
 Cryptography is the method of protecting information by turning it into a secret code so that only people with the right key can understand it. One of the earliest examples is the Caesar Cipher, which works by shifting each letter in the alphabet by a fixed number. For example, if you shift each letter by 3, the word “HELLO” becomes “KHOOR.” I used a Caesar Cipher wheel to practice encrypting and decrypting messages and saw how shifting letters can transform data to keep it private. This connects to Big Idea 3 because it shows how information can be protected from people who shouldn’t see it. Modern encryption uses the same basic idea, but with much more complex math that makes it extremely difficult for hackers to break.
 
 My Video explaining this topic: 
+
+This exercise is inspired by the AP CSP learning objectives (Big Idea 2), but all data and examples are original classroom material created for practice purposes.:
+https://docs.google.com/document/d/1Uzj7j1lJotEn718Ny7xKnCTpAUAhX5jAo5qjG2Xsxlc/edit?usp=sharing
 </details>
 
 <details>
