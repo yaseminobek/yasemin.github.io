@@ -124,6 +124,8 @@ My Video explaining this topic:
 
 This exercise is inspired by the AP CSP learning objectives (Big Idea 2), but all data and examples are original classroom material created for practice purposes.:
 https://docs.google.com/document/d/1Uzj7j1lJotEn718Ny7xKnCTpAUAhX5jAo5qjG2Xsxlc/edit?usp=sharing
+
+Pixel Painter: https://docs.google.com/document/d/1fXb6viMVV_IISz_UsmTqnwqWEfRzE-k3RfkaHXBzUE8/edit?usp=sharing
 </details>
 
 <details>
