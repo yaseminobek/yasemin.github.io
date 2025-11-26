@@ -1,4 +1,4 @@
-# yasemin.github.io
+[HashingWorksheet_Colorful.pdf](https://github.com/user-attachments/files/23780038/HashingWorksheet_Colorful.pdf)# yasemin.github.io
 <details>
 <summary>-About Me</summary>
 Hi, I'm Yasemin Derin and I'm a 10th grader in Hisar Schools. I will upload my projects, codes, documentations and ideas here this year. 
@@ -137,6 +137,12 @@ This exercise is inspired by the AP CSP learning objectives (Big Idea 2), but al
 https://docs.google.com/document/d/1Uzj7j1lJotEn718Ny7xKnCTpAUAhX5jAo5qjG2Xsxlc/edit?usp=sharing
 
 Pixel Painter: https://docs.google.com/document/d/1fXb6viMVV_IISz_UsmTqnwqWEfRzE-k3RfkaHXBzUE8/edit?usp=sharing
+
+Unplugged to Coding: Cryptography Projects - Hashing Algorithms:
+https://drive.google.com/file/d/1S9Mkk8FW3bXCumSLxPRd_SZ8roNXXiuV/view?usp=sharing
+https://drive.google.com/file/d/1MxD8F_ELOHyQoGJ36re-BzsGP-7P8hlJ/view?usp=sharing
+
+
 </details>
 
 <details>
