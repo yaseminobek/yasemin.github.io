@@ -122,7 +122,7 @@ Big Idea 3.1-3.6: https://docs.google.com/document/d/1EQT9v7h8v3buGdZZA8fo2btlHN
 My Ice cream - Mood / Color Project:
 https://drive.google.com/file/d/1cXtSjtGIlg_R4j7Wkp-YghNY5fer9tMp/view?usp=sharing --> My Video
 
-Figma design: https://www.figma.com/make/pxOsi1duRSDLgB0hXxpslC/Apple-iPad-Screen-Design?node-id=0-4&t=MlZ8OMyRxl8cehdN-1
+Figma design: https://drive.google.com/file/d/1EutNTRho_LNZ4H8rtH8Wu-9GfIEpS0fo/view?usp=sharing
 
 Cryptography: Caesar Cipher Activity
 
