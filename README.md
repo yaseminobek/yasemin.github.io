@@ -116,6 +116,9 @@ runHotChocolate()
 </details>
 <details>
 <summary>-My Projects-2</summary>
+
+Big Idea 3.1-3.6: https://docs.google.com/document/d/1EQT9v7h8v3buGdZZA8fo2btlHNpi-TkO285kFyyL4wc/edit?usp=sharing
+
 My Ice cream - Mood / Color Project:
 https://drive.google.com/file/d/1a2WisfbyzZ8Qked9swy9fAaBCMBJzCNj/view?usp=sharing --> My Video
 
