@@ -238,6 +238,16 @@ I learned that lists (arrays) store multiple values in order, and we can access 
 
 3. What would change if your list had more items?
 If my list had more items, the index numbers would increase, the count would grow, and I would need to print or manage more data.
+
+World Clock V1 Reflection:
+1. Why did you choose this theme?
+I chose this theme because it’s fun, visual, and easy to organize into a simple list. It also makes the project more enjoyable and clear.
+
+2. What did you learn about lists?
+I learned that lists (arrays) let us store multiple values in order and access each item using its index. They make printing, looping, and organizing data much easier.
+
+3. What would change if your list had more items?
+If my list had more items, the index numbers would increase, the count would be larger, and the output would become longer. I would also need more organization so everything stays clear.
 </details>
 
 <details>
