@@ -248,6 +248,9 @@ I learned that lists (arrays) let us store multiple values in order and access e
 
 3. What would change if your list had more items?
 If my list had more items, the index numbers would increase, the count would be larger, and the output would become longer. I would also need more organization so everything stays clear.
+
+Nadin's Speech:
+Nadin’s story inspired me because she showed that you don’t need years of experience or super complex code to create something powerful, what mattered most was choosing a topic she cared about and designing a playful, beautiful experience for users. It reminded me that big opportunities can start from one focused idea and one small screen, as long as you’re willing to experiment and put in consistent effort. In the future, I’d like to explore a Swift Playground that teaches kids about how the brain makes decisions combining simple games with visual explanations of concepts like attention, curiosity, and learning.
 </details>
 
 <details>
