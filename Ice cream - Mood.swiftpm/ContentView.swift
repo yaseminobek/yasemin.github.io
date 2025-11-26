@@ -3,7 +3,7 @@ import SwiftUI
 struct Mood: Identifiable {
     let id = UUID()
     let name: String
-    let level: Int      // 1–5 “energy level”
+    let level: Int      
     let color: Color
 }
 
@@ -27,7 +27,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            // dark background so colors pop
+           
             LinearGradient(
                 gradient: Gradient(colors: [Color.black, Color.purple.opacity(0.7)]),
                 startPoint: .top,
@@ -46,7 +46,7 @@ struct ContentView: View {
                 }
                 .padding(.top, 16)
                 
-                // main card with the moods
+              
                 ZStack {
                     RoundedRectangle(cornerRadius: 16)
                         .fill(Color(.systemBackground))
@@ -105,7 +105,7 @@ struct MoodRow: View {
                     .padding(.horizontal, 6),
                 alignment: .center
             )
-            .frame(width: 160)   // keep all rows aligned
+            .frame(width: 160)   
         }
     }
 }
