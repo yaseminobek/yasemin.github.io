@@ -240,7 +240,12 @@ In my Clock Game, I learned how to use @State, timers, and simple logic to make 
 </details>
 <details>
  <summary>-Reflections-2</summary>
-My Array Map V1 Reflection:
+Reflection-List:
+I chose the snack theme because it’s fun, easy to visualize, and matches the title “Super Snack List” with foods I actually like.
+I learned that lists (arrays) let me store multiple related items in one place, access them by index starting at 0, and quickly check how many items there are with .count.
+If my list had more items, I’d either need to write more text lines or, more efficiently, use a loop like ForEach so the UI updates automatically when I add or remove snacks.
+ 
+ My Array Map V1 Reflection:
 1. Why did you choose this theme?
 I chose this theme because snacks are fun, easy to recognize, and simple to organize into a list.
 
