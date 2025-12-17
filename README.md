@@ -209,7 +209,7 @@ for movie in movies {
 
 print("Total movies: \(movies.count)")
 
-Swift Design Assignment V2:  https://www.figma.com/make/pxOsi1duRSDLgB0hXxpslC/Apple-iPad-Screen-Design?t=FNLTyp0gCDQqx5tz-1
+Swift Design Assignment V2: 
 </details>
 
 <details>
