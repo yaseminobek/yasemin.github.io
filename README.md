@@ -144,6 +144,70 @@ https://drive.google.com/file/d/1S9Mkk8FW3bXCumSLxPRd_SZ8roNXXiuV/view?usp=shari
 https://drive.google.com/file/d/1MxD8F_ELOHyQoGJ36re-BzsGP-7P8hlJ/view?usp=sharing
 [HashingWorksheet_Colorful.pdf](https://github.com/user-attachments/files/23780038/HashingWorksheet_Colorful.pdf)
 
+Big Idea3 Review Part I Code Project:
+Scenario 1: Coffee Shop Order: We create a coffee order. We store prices in variables, calculate totals using math expressions, use strings for names, booleans for discounts, and conditionals to apply discounts.
+
+Swift Code (Playground)
+let customerName = "Alex"
+
+let coffeePrice = 4.5
+
+let muffinPrice = 3.0
+
+let hasStudentDiscount = true
+
+var total = coffeePrice + muffinPrice
+
+if hasStudentDiscount {
+   
+    total = total * 0.9
+
+}
+
+print("Customer: \(customerName)")
+
+print("Total price: \(total)")
+
+Scenario 2: Workout Tracker: We track a workout session. We group data logically and use nested conditionals to decide workout intensity.
+
+Swift Code
+
+let steps = 8500
+
+let minutes = 45
+
+if minutes >= 30 {
+    
+    if steps >= 8000 {
+        
+        print("Great workout!")
+   
+    } else {
+        
+        print("Good time, try more steps next time.")
+  
+    }
+
+} else 
+{
+   
+    print("Workout too short.")
+
+}
+
+Scenario 3: Movie Watchlist: We store movies in a list and create a simple algorithm to display and count them.
+
+Swift Code
+
+let movies = ["Inception", "Interstellar", "Dune", "Avatar"]
+
+for movie in movies {
+   
+    print("Movie: \(movie)")
+
+}
+
+print("Total movies: \(movies.count)")
 
 </details>
 
