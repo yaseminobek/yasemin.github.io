@@ -209,7 +209,8 @@ for movie in movies {
 
 print("Total movies: \(movies.count)")
 
-Swift Design Assignment V2: 
+Swift Design Assignment V2: https://drive.google.com/file/d/1AaurWDxwv-vq07C5F3D916lSgf3MwNxq/view?usp=sharing
+https://drive.google.com/file/d/1zb0MvG2wohEMH-Y0mwGkAYnCnoI6xTP7/view?usp=sharing
 </details>
 
 <details>
