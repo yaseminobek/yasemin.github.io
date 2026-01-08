@@ -117,102 +117,103 @@ runHotChocolate()
 <details>
 <summary>-My Projects-2</summary>
 
-**Big Idea 3.1-3.6:** https://docs.google.com/document/d/1EQT9v7h8v3buGdZZA8fo2btlHNpi-TkO285kFyyL4wc/edit?usp=sharing
+## **Big Idea 3.1-3.6:** https://docs.google.com/document/d/1EQT9v7h8v3buGdZZA8fo2btlHNpi-TkO285kFyyL4wc/edit?usp=sharing
 
-**My Ice cream - Mood / Color Project:**
+## **My Ice cream - Mood / Color Project:**
 https://drive.google.com/file/d/1cXtSjtGIlg_R4j7Wkp-YghNY5fer9tMp/view?usp=sharing --> My Video
 
-Figma design: https://drive.google.com/file/d/1EutNTRho_LNZ4H8rtH8Wu-9GfIEpS0fo/view?usp=sharing
+## **Figma design:** https://drive.google.com/file/d/1EutNTRho_LNZ4H8rtH8Wu-9GfIEpS0fo/view?usp=sharing
 
-Cryptography: Caesar Cipher Activity
+## **Cryptography: Caesar Cipher Activity**
 https://drive.google.com/file/d/1ZUswif0dkUlDD9w98I9onc6hXE93gmaZ/view?usp=sharing
 
 https://docs.google.com/document/d/1Vq1MGl1c_whXEwaDXhPayGlMM0rSYmyNZHXwtbjBN3E/edit?usp=sharing
 
 Cryptography is the method of protecting information by turning it into a secret code so that only people with the right key can understand it. One of the earliest examples is the Caesar Cipher, which works by shifting each letter in the alphabet by a fixed number. For example, if you shift each letter by 3, the word “HELLO” becomes “KHOOR.” I used a Caesar Cipher wheel to practice encrypting and decrypting messages and saw how shifting letters can transform data to keep it private. This connects to Big Idea 3 because it shows how information can be protected from people who shouldn’t see it. Modern encryption uses the same basic idea, but with much more complex math that makes it extremely difficult for hackers to break.
 
-My Video explaining this topic: 
+## **My Video explaining this topic:** 
 
 This exercise is inspired by the AP CSP learning objectives (Big Idea 2), but all data and examples are original classroom material created for practice purposes.:
 https://docs.google.com/document/d/1Uzj7j1lJotEn718Ny7xKnCTpAUAhX5jAo5qjG2Xsxlc/edit?usp=sharing
 
-Pixel Painter: https://docs.google.com/document/d/1fXb6viMVV_IISz_UsmTqnwqWEfRzE-k3RfkaHXBzUE8/edit?usp=sharing
+## **Pixel Painter:**
+https://docs.google.com/document/d/1fXb6viMVV_IISz_UsmTqnwqWEfRzE-k3RfkaHXBzUE8/edit?usp=sharing
 https://drive.google.com/file/d/1n-uKztAEfEXkZ_KUpryosg8f1fDfegTL/view?usp=sharing
 
-Unplugged to Coding: Cryptography Projects - Hashing Algorithms:
+## **Unplugged to Coding: Cryptography Projects - Hashing Algorithms:** 
 https://drive.google.com/file/d/1S9Mkk8FW3bXCumSLxPRd_SZ8roNXXiuV/view?usp=sharing
 https://drive.google.com/file/d/1MxD8F_ELOHyQoGJ36re-BzsGP-7P8hlJ/view?usp=sharing
 [HashingWorksheet_Colorful.pdf](https://github.com/user-attachments/files/23780038/HashingWorksheet_Colorful.pdf)
 
-Big Idea3 Review Part I Code Project:
+## **Big Idea3 Review Part I Code Project:**
 Scenario 1: Coffee Shop Order: We create a coffee order. We store prices in variables, calculate totals using math expressions, use strings for names, booleans for discounts, and conditionals to apply discounts.
 
-Swift Code (Playground)
-let customerName = "Alex"
+#### Swift Code (Playground)
+#### let customerName = "Alex"
 
-let coffeePrice = 4.5
+#### let coffeePrice = 4.5
 
-let muffinPrice = 3.0
+#### let muffinPrice = 3.0
 
-let hasStudentDiscount = true
+#### let hasStudentDiscount = true
 
-var total = coffeePrice + muffinPrice
+#### var total = coffeePrice + muffinPrice
 
-if hasStudentDiscount {
+#### if hasStudentDiscount {
    
-    total = total * 0.9
+  ####   total = total * 0.9
 
-}
+#### }
 
-print("Customer: \(customerName)")
+#### print("Customer: \(customerName)")
 
-print("Total price: \(total)")
+#### print("Total price: \(total)")
 
-Scenario 2: Workout Tracker: We track a workout session. We group data logically and use nested conditionals to decide workout intensity.
+#### Scenario 2: Workout Tracker: We track a workout session. We group data logically and use nested conditionals to decide workout intensity.
 
-Swift Code
+#### Swift Code
 
-let steps = 8500
+#### let steps = 8500
 
-let minutes = 45
+#### let minutes = 45
 
-if minutes >= 30 {
+#### if minutes >= 30 {
     
-    if steps >= 8000 {
+  ####   if steps >= 8000 {
         
-        print("Great workout!")
+   ####    print("Great workout!")
    
-    } else {
+   #### } else {
         
-        print("Good time, try more steps next time.")
+   ####     print("Good time, try more steps next time.")
   
-    }
+  ####  }
 
-} else 
-{
+#### } else 
+#### {
    
-    print("Workout too short.")
+####    print("Workout too short.")
 
-}
+#### }
 
-Scenario 3: Movie Watchlist: We store movies in a list and create a simple algorithm to display and count them.
+## **Scenario 3:** Movie Watchlist: We store movies in a list and create a simple algorithm to display and count them.
 
-Swift Code
+#### Swift Code
 
-let movies = ["Inception", "Interstellar", "Dune", "Avatar"]
+#### let movies = ["Inception", "Interstellar", "Dune", "Avatar"]
 
-for movie in movies {
+#### for movie in movies {
    
-    print("Movie: \(movie)")
+####    print("Movie: \(movie)")
 
-}
+#### }
 
-print("Total movies: \(movies.count)")
+#### print("Total movies: \(movies.count)")
 
-Swift Design Assignment V2: https://drive.google.com/file/d/1AaurWDxwv-vq07C5F3D916lSgf3MwNxq/view?usp=sharing
+#### Swift Design Assignment V2: https://drive.google.com/file/d/1AaurWDxwv-vq07C5F3D916lSgf3MwNxq/view?usp=sharing
 https://drive.google.com/file/d/1zb0MvG2wohEMH-Y0mwGkAYnCnoI6xTP7/view?usp=sharing
 
-World Clock V1: 
+#### World Clock V1: 
 https://drive.google.com/file/d/13wqEWAaiSiUl3A7MpCrqOTNbG7WoIEj0/view?usp=sharing
 </details>
 
