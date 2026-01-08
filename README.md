@@ -338,6 +338,28 @@ If my list had more items, the index numbers would increase, the count would be 
 
 Nadin's Speech:
 Nadin’s story inspired me because she showed that you don’t need years of experience or super complex code to create something powerful, what mattered most was choosing a topic she cared about and designing a playful, beautiful experience for users. It reminded me that big opportunities can start from one focused idea and one small screen, as long as you’re willing to experiment and put in consistent effort. In the future, I’d like to explore a Swift Playground that teaches kids about how the brain makes decisions combining simple games with visual explanations of concepts like attention, curiosity, and learning.
+
+Robot Movement Simulation: 
+1) 
+
+My program is a robot movement simulation on a grid. The robot is a blue square that follows a planned set of moves. As it moves, it tracks where it has been, and it stops if it hits a wall or the edge. The experience is watching the robot follow directions step-by-step and seeing how rules affect what it can do.
+
+2) 
+
+A procedure with parameters is move(dir:steps:speed:). It makes the code simpler because I can use one function for all movement instead of rewriting movement logic over and over. The parameters change the behavior: dir changes the direction, steps changes how many times it moves, and speed changes how fast the animation looks.
+
+3) 
+
+The directions are stored in arrays (dirs and counts). The main algorithm is the for loop in runPlan, which goes through the arrays and runs each move in order. Inside move, if/else statements check if the next position is inside the grid and whether it is a wall. This is how the robot decides to move or stop.
+
+4) 
+
+At first the robot moved too fast, so it looked like nothing was happening. I fixed that by adding a short delay between steps using Task.sleep, so the robot updates on the screen step-by-step. That made the simulation easier to understand and debug.
+
+5)
+
+I used nested if/else inside the move function. First it checks if the next cell is inside the grid. If it is inside, then it checks if it is a wall. These nested checks let the robot make a more detailed decision: move forward, or stop because of a wall, or stop because of the edge.
+
 </details>
 
 <details>
