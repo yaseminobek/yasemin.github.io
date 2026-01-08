@@ -117,9 +117,9 @@ runHotChocolate()
 <details>
 <summary>-My Projects-2</summary>
 
-Big Idea 3.1-3.6: https://docs.google.com/document/d/1EQT9v7h8v3buGdZZA8fo2btlHNpi-TkO285kFyyL4wc/edit?usp=sharing
+**Big Idea 3.1-3.6:** https://docs.google.com/document/d/1EQT9v7h8v3buGdZZA8fo2btlHNpi-TkO285kFyyL4wc/edit?usp=sharing
 
-My Ice cream - Mood / Color Project:
+**My Ice cream - Mood / Color Project:**
 https://drive.google.com/file/d/1cXtSjtGIlg_R4j7Wkp-YghNY5fer9tMp/view?usp=sharing --> My Video
 
 Figma design: https://drive.google.com/file/d/1EutNTRho_LNZ4H8rtH8Wu-9GfIEpS0fo/view?usp=sharing
