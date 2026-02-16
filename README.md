@@ -225,6 +225,8 @@ https://drive.google.com/file/d/13wqEWAaiSiUl3A7MpCrqOTNbG7WoIEj0/view?usp=shari
  https://docs.google.com/document/d/1gJdZXu1k6nbYsO0bEJpG9lM--ukgNF6rrSv9D4Ewzak/edit?usp=sharing
  https://drive.google.com/file/d/1ZFEoDpn8gAdiiHMqOKXq8pfNWeZa9u7Q/view?usp=sharing
 
+ AP CSP Unit 3: https://docs.google.com/document/d/1y4A0z1xPdjUPDQKU-dDvKXoZ_l1VegJj246B-m6o5P4/edit?usp=sharing
+
  </details>
 
 
