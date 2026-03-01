@@ -231,6 +231,9 @@ https://drive.google.com/file/d/13wqEWAaiSiUl3A7MpCrqOTNbG7WoIEj0/view?usp=shari
  
 https://docs.google.com/document/d/1ixKPyeOJpdGtyHg1LxCLlMekjVLhaWs9H-jkvuSzrOw/edit?usp=sharing
 
+AP CSP Create Task – Stage 3
+https://docs.google.com/document/d/1KpqP2mKgznZUReiMUqjU99UApVbS_oFWcqEG7yeY-f4/edit?usp=sharing
+
  </details>
 
 
