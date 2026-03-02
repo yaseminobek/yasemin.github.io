@@ -234,6 +234,8 @@ https://docs.google.com/document/d/1ixKPyeOJpdGtyHg1LxCLlMekjVLhaWs9H-jkvuSzrOw/
 AP CSP Create Task – Stage 3
 https://docs.google.com/document/d/1KpqP2mKgznZUReiMUqjU99UApVbS_oFWcqEG7yeY-f4/edit?usp=sharing
 
+Big ıdea 4: https://docs.google.com/document/d/1CdlssPEXuh0K4_p4EB36xeZNeNmgOD_6sumcLS6kM6Y/edit?usp=sharing
+
  </details>
 
 
