@@ -1,610 +1,4 @@
-<!-- MY PROJECTS 3 -->
-<section>
-    <h2>My Projects 3</h2>
-    
-    <details>
-        <summary>✂️ Rock Paper Scissors</summary>
-        <p><a href="https://docs.google.com/document/d/1gJdZXu1k6nbYsO0bEJpG9lM--ukgNF6rrSv9D4Ewzak/edit?usp=sharing" target="_blank">Document</a></p>
-        <p><a href="https://drive.google.com/file/d/1ZFEoDpn8gAdiiHMqOKXq8pfNWeZa9u7Q/view?usp=sharing" target="_blank">Video</a></p>
-        
-        <details>
-            <summary>💻 Swift Code</summary>
-            <pre>import SwiftUI
 
-@main
-struct MyApp: App {
-    var body: some Scene {
-        WindowGroup { MainTabView() }
-    }
-}
-
-struct MainTabView: View {
-    var body: some View {
-        TabView {
-            RockPaperScissorsView()
-                .tabItem { Label("RPS", systemImage: "hand.raised.fill") }
-            
-            PatternGeneratorView()
-                .tabItem { Label("Pattern", systemImage: "square.grid.3x3.fill") }
-        }
-    }
-}
-
-enum Choice: String, CaseIterable, Identifiable {
-    case rock = "🪨", paper = "📄", scissors = "✂️"
-    var id: String { rawValue }
-}
-
-enum RoundResult {
-    case win, loss, tie
-    var text: String {
-        switch self {
-        case .win: return "You win!"
-        case .loss: return "You lose!"
-        case .tie: return "It's a tie!"
-        }
-    }
-}
-
-struct Round: Identifiable {
-    let id = UUID()
-    let player: Choice
-    let computer: Choice
-    let result: RoundResult
-}
-
-struct RockPaperScissorsView: View {
-    @State private var player: Choice?
-    @State private var computer: Choice?
-    @State private var message = "Make a choice!"
-    @State private var wins = 0
-    @State private var losses = 0
-    @State private var ties = 0
-    @State private var history: [Round] = []
-    
-    var body: some View {
-        VStack(spacing: 16) {
-            Text("Rock • Paper • Scissors").font(.title).bold()
-            Text("You: \(player?.rawValue ?? "—")   Computer: \(computer?.rawValue ?? "—")").font(.title2)
-            Text(message).font(.headline)
-            
-            HStack(spacing: 12) {
-                ForEach(Choice.allCases) { c in
-                    Button {
-                        play(c)
-                    } label: {
-                        Text(c.rawValue)
-                            .font(.system(size: 44))
-                            .padding()
-                            .background(Color.gray.opacity(0.15))
-                            .cornerRadius(14)
-                    }
-                }
-            }
-            
-            Text("Wins: \(wins)   Losses: \(losses)   Ties: \(ties)").font(.headline)
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Last 5 Games").font(.headline)
-                if history.isEmpty {
-                    Text("No games yet.").foregroundColor(.secondary)
-                } else {
-                    ForEach(history) { r in
-                        Text("You \(r.player.rawValue) vs \(r.computer.rawValue) → \(r.result.text)")
-                    }
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
-            .background(Color.gray.opacity(0.08))
-            .cornerRadius(14)
-            
-            Button("Restart Game", role: .destructive) {
-                restart()
-            }
-            .bold()
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color.red.opacity(0.15))
-            .cornerRadius(14)
-            
-            Spacer()
-        }
-        .padding()
-    }
-    
-    private func play(_ choice: Choice) {
-        let comp = Choice.allCases.randomElement() ?? .rock
-        let result = winner(player: choice, computer: comp)
-        
-        player = choice
-        computer = comp
-        message = result.text
-        
-        switch result {
-        case .win: wins += 1
-        case .loss: losses += 1
-        case .tie: ties += 1
-        }
-        
-        history.insert(Round(player: choice, computer: comp, result: result), at: 0)
-        if history.count > 5 { history.removeLast() }
-    }
-    
-    private func winner(player: Choice, computer: Choice) -> RoundResult {
-        if player == computer { return .tie }
-        if (player == .rock && computer == .scissors) ||
-            (player == .paper && computer == .rock) ||
-            (player == .scissors && computer == .paper) { return .win }
-        return .loss
-    }
-    
-    private func restart() {
-        player = nil
-        computer = nil
-        message = "Make a choice!"
-        wins = 0
-        losses = 0
-        ties = 0
-        history = []
-    }
-}
-
-struct PatternGeneratorView: View {
-    @State private var size = 4
-    @State private var grid: [[Color]] = Array(repeating: Array(repeating: .white, count: 4), count: 4)
-    @State private var paint = Color.blue
-    @State private var anim = true
-    
-    let key = "grid_save_v1"
-    
-    var body: some View {
-        VStack(spacing: 16) {
-            Text("Pattern Generator").font(.title).bold()
-            
-            Picker("Grid", selection: $size) {
-                Text("4x4").tag(4)
-                Text("6x6").tag(6)
-            }
-            .pickerStyle(.segmented)
-            .onChange(of: size) { _, v in
-                grid = Array(repeating: Array(repeating: .white, count: v), count: v)
-            }
-            
-            HStack(spacing: 12) {
-                ColorPicker("Color", selection: $paint)
-                Toggle("Anim", isOn: $anim)
-            }
-            
-            VStack(spacing: 6) {
-                ForEach(0..<size, id: \.self) { r in
-                    HStack(spacing: 6) {
-                        ForEach(0..<size, id: \.self) { c in
-                            Rectangle()
-                                .fill(grid[r][c])
-                                .frame(width: cell(), height: cell())
-                                .cornerRadius(8)
-                                .onTapGesture {
-                                    if anim { withAnimation { grid[r][c] = paint } }
-                                    else { grid[r][c] = paint }
-                                }
-                        }
-                    }
-                }
-            }
-            .padding()
-            .background(Color.gray.opacity(0.08))
-            .cornerRadius(16)
-            
-            HStack(spacing: 12) {
-                Button("Randomize") {
-                    if anim { withAnimation { randomize() } } else { randomize() }
-                }
-                .buttonStyle(.borderedProminent)
-                
-                Button("Clear") {
-                    if anim { withAnimation { clear() } } else { clear() }
-                }
-                .buttonStyle(.bordered)
-                
-                Button("Save") { save() }.buttonStyle(.bordered)
-                Button("Load") { load() }.buttonStyle(.bordered)
-            }
-            
-            Spacer()
-        }
-        .padding()
-        .onAppear {
-            grid = Array(repeating: Array(repeating: .white, count: size), count: size)
-        }
-    }
-    
-    private func cell() -> CGFloat { size == 4 ? 70 : 45 }
-    
-    private func randomize() {
-        let palette: [Color] = [.red, .orange, .yellow, .green, .blue, .purple, .pink, .teal, .indigo, .brown]
-        grid = (0..<size).map { _ in (0..<size).map { _ in palette.randomElement() ?? .blue } }
-    }
-    
-    private func clear() {
-        for r in 0..<size { for c in 0..<size { grid[r][c] = .white } }
-    }
-    
-    private func save() {
-        let flat = grid.flatMap { $0.map { $0.rgba() } }
-        UserDefaults.standard.set(flat, forKey: key)
-        UserDefaults.standard.set(size, forKey: key + "_size")
-    }
-    
-    private func load() {
-        let s = UserDefaults.standard.integer(forKey: key + "_size")
-        let loadedSize = (s == 4 || s == 6) ? s : size
-        let arr = UserDefaults.standard.stringArray(forKey: key) ?? []
-        
-        size = loadedSize
-        grid = Array(repeating: Array(repeating: .white, count: loadedSize), count: loadedSize)
-        if arr.count != loadedSize * loadedSize { return }
-        
-        var i = 0
-        for r in 0..<loadedSize {
-            for c in 0..<loadedSize {
-                grid[r][c] = Color.fromRGBA(arr[i]) ?? .white
-                i += 1
-            }
-        }
-    }
-}
-
-extension Color {
-    func rgba() -> String {
-        let ui = UIColor(self)
-        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
-        ui.getRed(&r, green: &g, blue: &b, alpha: &a)
-        return "\(r),\(g),\(b),\(a)"
-    }
-    
-    static func fromRGBA(_ s: String) -> Color? {
-        let p = s.split(separator: ",").compactMap { Double($0) }
-        if p.count != 4 { return nil }
-        return Color(.sRGB, red: p[0], green: p[1], blue: p[2], opacity: p[3])
-    }
-}</pre>
-        </details>
-    </details>
-    
-    <details>
-        <summary>🍳 Kitchen Rush Game</summary>
-        
-        <details>
-            <summary>💻 Swift Code - ContentView</summary>
-            <pre>import SwiftUI
-
-struct Recipe {
-    var name: String
-    var steps: [String]
-}
-
-struct ContentView: View {
-    
-    var recipes: [Recipe] = [
-        Recipe(name: "Burger", steps: ["Bun", "Patty", "Cheese"]),
-        Recipe(name: "Pizza", steps: ["Dough", "Sauce", "Cheese"]),
-        Recipe(name: "Salad", steps: ["Lettuce", "Tomato", "Dressing"])
-    ]
-    
-    @State private var currentRecipe: Recipe?
-    @State private var currentRecipeSteps: [String] = []
-    @State private var playerSelection: [String] = []
-    @State private var money: Int = 0
-    @State private var reputation: Int = 100
-    @State private var screen: String = "Home"
-    @State private var resultMessage: String = ""
-    
-    var body: some View {
-        ZStack {
-            Color(red: 0.95, green: 0.88, blue: 0.76)
-                .ignoresSafeArea()
-            
-            if screen == "Home" {
-                homeScreen
-            } else if screen == "Game" {
-                gameScreen
-            } else if screen == "Result" {
-                resultScreen
-            }
-        }
-    }
-    
-    var homeScreen: some View {
-        VStack(spacing: 20) {
-            Spacer()
-            
-            VStack(spacing: 15) {
-                Text("Kitchen Rush")
-                    .font(.largeTitle)
-                    .bold()
-                
-                Text("Make orders correctly to earn money!")
-                    .multilineTextAlignment(.center)
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("How to Play:")
-                        .bold()
-                    Text("1. Read the recipe")
-                    Text("2. Click ingredients in order")
-                    Text("3. Submit your order")
-                    Text("4. Correct = +$10, Wrong = -10 reputation")
-                }
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(10)
-                
-                Button(action: {
-                    StartNewRound()
-                    screen = "Game"
-                }) {
-                    Text("Start Game")
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.orange)
-                        .cornerRadius(10)
-                }
-            }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(20)
-            .padding()
-            
-            Spacer()
-        }
-    }
-    
-    var gameScreen: some View {
-        VStack(spacing: 15) {
-            
-            HStack {
-                VStack {
-                    Text("Money")
-                    Text("$\(money)")
-                        .bold()
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(10)
-                
-                VStack {
-                    Text("Reputation")
-                    Text("\(reputation)%")
-                        .bold()
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(10)
-            }
-            
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Order: \(currentRecipe?.name ?? "")")
-                    .bold()
-                
-                Text("Recipe:")
-                    .bold()
-                
-                ForEach(currentRecipeSteps.indices, id: \.self) { i in
-                    Text("\(i + 1). \(currentRecipeSteps[i])")
-                }
-                
-                Text("Your Selection:")
-                    .bold()
-                
-                Text(playerSelection.joined(separator: ", "))
-                    .foregroundColor(.gray)
-            }
-            .padding()
-            .background(Color.white)
-            .cornerRadius(15)
-            
-            let allIngredients = Array(Set(recipes.flatMap { $0.steps }))
-            
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))], spacing: 10) {
-                ForEach(allIngredients, id: \.self) { ingredient in
-                    Button(action: {
-                        AddIngredient(ingredientName: ingredient)
-                    }) {
-                        Text(ingredient)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(8)
-                    }
-                }
-            }
-            
-            HStack {
-                Button("Clear") {
-                    playerSelection = []
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.gray.opacity(0.3))
-                .cornerRadius(10)
-                
-                Button("Submit") {
-                    let isCorrect = CheckOrder(recipeSteps: currentRecipeSteps,
-                                               selection: playerSelection)
-                    
-                    if isCorrect {
-                        money += 10
-                        resultMessage = "Correct! +$10"
-                    } else {
-                        reputation -= 10
-                        resultMessage = "Wrong order! -10 reputation"
-                    }
-                    
-                    screen = "Result"
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.green)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-            }
-        }
-        .padding()
-    }
-    
-    var resultScreen: some View {
-        VStack(spacing: 20) {
-            Spacer()
-            
-            Text(resultMessage)
-                .font(.title)
-                .bold()
-            
-            Text("Money: $\(money)")
-            Text("Reputation: \(reputation)%")
-            
-            Button("Play Again") {
-                if reputation <= 0 {
-                    resultMessage = "Game Over"
-                } else {
-                    StartNewRound()
-                    screen = "Game"
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color.orange)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            
-            Button("End") {
-                screen = "Home"
-            }
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color.gray)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            
-            Spacer()
-        }
-        .padding()
-    }
-    
-    func StartNewRound() {
-        playerSelection = []
-        if let randomRecipe = recipes.randomElement() {
-            currentRecipe = randomRecipe
-            currentRecipeSteps = randomRecipe.steps
-        }
-    }
-    
-    func AddIngredient(ingredientName: String) {
-        playerSelection.append(ingredientName)
-    }
-    
-    func CheckOrder(recipeSteps: [String], selection: [String]) -> Bool {
-        if selection.count != recipeSteps.count {
-            return false
-        }
-        for i in 0..<recipeSteps.count {
-            if selection[i] != recipeSteps[i] {
-                return false
-            }
-        }
-        return true
-    }
-}</pre>
-        </details>
-    </details>
-    
-    <details>
-        <summary>#️⃣ Binary Search Protocol</summary>
-        
-        <details>
-            <summary>💻 Swift Code</summary>
-            <pre>import Foundation
-
-let database = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
-let targetID = 23
-
-var low = 0
-var high = database.count - 1
-var steps = 0
-var found = false
-var foundIndex = -1
-
-print("> SYSTEM: Starting Binary Search Protocol...")
-print("> Target ID: \(targetID)")
-print("> ----------------------------------------")
-
-while low <= high && !found {
-    steps += 1
-    let mid = (low + high) / 2
-    let value = database[mid]
-    
-    print("> Step \(steps): Checking Index [\(mid)] -> Value: \(value)")
-    
-    if value == targetID {
-        found = true
-        foundIndex = mid
-    } else if value < targetID {
-        low = mid + 1
-    } else {
-        high = mid - 1
-    }
-}
-
-print(">")
-
-if found {
-    print("> SUCCESS: User ID found at Index \(foundIndex)")
-    print("> EFFICIENCY: Operation completed in \(steps) steps.")
-}</pre>
-        </details>
-        <p><strong>What it does:</strong> This program implements the Binary Search algorithm to efficiently find a target value in a sorted array. It demonstrates how binary search reduces the search space by half with each step, making it much faster than linear search.</p>
-    </details>
-    
-    <details>
-        <summary>📚 AP CSP Unit 3</summary>
-        <p><a href="https://docs.google.com/document/d/1y4A0z1xPdjUPDQKU-dDvKXoZ_l1VegJj246B-m6o5P4/edit?usp=sharing" target="_blank">View Document</a></p>
-    </details>
-    
-    <details>
-        <summary>🎯 AP CSP Create Task – Stage 1</summary>
-        <p><a href="https://docs.google.com/document/d/1jZI2dvJGYjJlQVCBhWPUxDYpafwaXPkeAVUk3vbATfM/edit?usp=sharing" target="_blank">View Document</a></p>
-    </details>
-    
-    <details>
-        <summary>🎨 AP CSP Create Task – Stage 2 (Figma Design & Updates)</summary>
-        <p><a href="https://docs.google.com/document/d/1ixKPyeOJpdGtyHg1LxCLlMekjVLhaWs9H-jkvuSzrOw/edit?usp=sharing" target="_blank">View Document</a></p>
-    </details>
-    
-    <details>
-        <summary>💾 AP CSP Create Task – Stage 3</summary>
-        <p><a href="https://docs.google.com/document/d/1KpqP2mKgznZUReiMUqjU99UApVbS_oFWcqEG7yeY-f4/edit?usp=sharing" target="_blank">View Document</a></p>
-    </details>
-    
-    <details>
-        <summary>🎬 AP CSP Create Task – Stage 4</summary>
-        <p><a href="https://drive.google.com/file/d/1GcuIH3MIBWooGMWoJz9fODMOhbGVH-6j/view?usp=sharing" target="_blank">Video 1</a></p>
-        <p><a href="https://drive.google.com/file/d/17OzFCbCV_ZBdcXEeLvEKn6uBClaUl84V/view?usp=sharing" target="_blank">Video 2</a></p>
-    </details>
-    
-    <details>
-        <summary>💡 Big Idea 4</summary>
-        <p><a href="https://docs.google.com/document/d/1CdlssPEXuh0K4_p4EB36xeZNeNmgOD_6sumcLS6kM6Y/edit?usp=sharing" target="_blank">View Document</a></p>
-    </details>
-    
-    <details>
-        <summary>🏆 AP CSP Create Task – Final Stage</summary>
-        <p><a href="https://drive.google.com/file/d/1fnnYe0lrraAP-SqW-147xeFI4RsdMh50/view?usp=sharing" target="_blank">View Project</a></p>
-    </details>
-
-</section>
         <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1267,6 +661,614 @@ print("Total movies: \(movies.count)")</pre>
     </details>
     
     <p><a href="https://drive.google.com/file/d/11Jcfd-ekgKxisfiRhTucz6YQ5uREFhAj/view?usp=sharing" target="_blank">📹 Video Explanation</a></p>
+
+    <!-- MY PROJECTS 3 -->
+<section>
+    <h2>My Projects 3</h2>
+    
+    <details>
+        <summary>✂️ Rock Paper Scissors</summary>
+        <p><a href="https://docs.google.com/document/d/1gJdZXu1k6nbYsO0bEJpG9lM--ukgNF6rrSv9D4Ewzak/edit?usp=sharing" target="_blank">Document</a></p>
+        <p><a href="https://drive.google.com/file/d/1ZFEoDpn8gAdiiHMqOKXq8pfNWeZa9u7Q/view?usp=sharing" target="_blank">Video</a></p>
+        
+        <details>
+            <summary>💻 Swift Code</summary>
+            <pre>import SwiftUI
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup { MainTabView() }
+    }
+}
+
+struct MainTabView: View {
+    var body: some View {
+        TabView {
+            RockPaperScissorsView()
+                .tabItem { Label("RPS", systemImage: "hand.raised.fill") }
+            
+            PatternGeneratorView()
+                .tabItem { Label("Pattern", systemImage: "square.grid.3x3.fill") }
+        }
+    }
+}
+
+enum Choice: String, CaseIterable, Identifiable {
+    case rock = "🪨", paper = "📄", scissors = "✂️"
+    var id: String { rawValue }
+}
+
+enum RoundResult {
+    case win, loss, tie
+    var text: String {
+        switch self {
+        case .win: return "You win!"
+        case .loss: return "You lose!"
+        case .tie: return "It's a tie!"
+        }
+    }
+}
+
+struct Round: Identifiable {
+    let id = UUID()
+    let player: Choice
+    let computer: Choice
+    let result: RoundResult
+}
+
+struct RockPaperScissorsView: View {
+    @State private var player: Choice?
+    @State private var computer: Choice?
+    @State private var message = "Make a choice!"
+    @State private var wins = 0
+    @State private var losses = 0
+    @State private var ties = 0
+    @State private var history: [Round] = []
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("Rock • Paper • Scissors").font(.title).bold()
+            Text("You: \(player?.rawValue ?? "—")   Computer: \(computer?.rawValue ?? "—")").font(.title2)
+            Text(message).font(.headline)
+            
+            HStack(spacing: 12) {
+                ForEach(Choice.allCases) { c in
+                    Button {
+                        play(c)
+                    } label: {
+                        Text(c.rawValue)
+                            .font(.system(size: 44))
+                            .padding()
+                            .background(Color.gray.opacity(0.15))
+                            .cornerRadius(14)
+                    }
+                }
+            }
+            
+            Text("Wins: \(wins)   Losses: \(losses)   Ties: \(ties)").font(.headline)
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Last 5 Games").font(.headline)
+                if history.isEmpty {
+                    Text("No games yet.").foregroundColor(.secondary)
+                } else {
+                    ForEach(history) { r in
+                        Text("You \(r.player.rawValue) vs \(r.computer.rawValue) → \(r.result.text)")
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+            .background(Color.gray.opacity(0.08))
+            .cornerRadius(14)
+            
+            Button("Restart Game", role: .destructive) {
+                restart()
+            }
+            .bold()
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.red.opacity(0.15))
+            .cornerRadius(14)
+            
+            Spacer()
+        }
+        .padding()
+    }
+    
+    private func play(_ choice: Choice) {
+        let comp = Choice.allCases.randomElement() ?? .rock
+        let result = winner(player: choice, computer: comp)
+        
+        player = choice
+        computer = comp
+        message = result.text
+        
+        switch result {
+        case .win: wins += 1
+        case .loss: losses += 1
+        case .tie: ties += 1
+        }
+        
+        history.insert(Round(player: choice, computer: comp, result: result), at: 0)
+        if history.count > 5 { history.removeLast() }
+    }
+    
+    private func winner(player: Choice, computer: Choice) -> RoundResult {
+        if player == computer { return .tie }
+        if (player == .rock && computer == .scissors) ||
+            (player == .paper && computer == .rock) ||
+            (player == .scissors && computer == .paper) { return .win }
+        return .loss
+    }
+    
+    private func restart() {
+        player = nil
+        computer = nil
+        message = "Make a choice!"
+        wins = 0
+        losses = 0
+        ties = 0
+        history = []
+    }
+}
+
+struct PatternGeneratorView: View {
+    @State private var size = 4
+    @State private var grid: [[Color]] = Array(repeating: Array(repeating: .white, count: 4), count: 4)
+    @State private var paint = Color.blue
+    @State private var anim = true
+    
+    let key = "grid_save_v1"
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("Pattern Generator").font(.title).bold()
+            
+            Picker("Grid", selection: $size) {
+                Text("4x4").tag(4)
+                Text("6x6").tag(6)
+            }
+            .pickerStyle(.segmented)
+            .onChange(of: size) { _, v in
+                grid = Array(repeating: Array(repeating: .white, count: v), count: v)
+            }
+            
+            HStack(spacing: 12) {
+                ColorPicker("Color", selection: $paint)
+                Toggle("Anim", isOn: $anim)
+            }
+            
+            VStack(spacing: 6) {
+                ForEach(0..<size, id: \.self) { r in
+                    HStack(spacing: 6) {
+                        ForEach(0..<size, id: \.self) { c in
+                            Rectangle()
+                                .fill(grid[r][c])
+                                .frame(width: cell(), height: cell())
+                                .cornerRadius(8)
+                                .onTapGesture {
+                                    if anim { withAnimation { grid[r][c] = paint } }
+                                    else { grid[r][c] = paint }
+                                }
+                        }
+                    }
+                }
+            }
+            .padding()
+            .background(Color.gray.opacity(0.08))
+            .cornerRadius(16)
+            
+            HStack(spacing: 12) {
+                Button("Randomize") {
+                    if anim { withAnimation { randomize() } } else { randomize() }
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button("Clear") {
+                    if anim { withAnimation { clear() } } else { clear() }
+                }
+                .buttonStyle(.bordered)
+                
+                Button("Save") { save() }.buttonStyle(.bordered)
+                Button("Load") { load() }.buttonStyle(.bordered)
+            }
+            
+            Spacer()
+        }
+        .padding()
+        .onAppear {
+            grid = Array(repeating: Array(repeating: .white, count: size), count: size)
+        }
+    }
+    
+    private func cell() -> CGFloat { size == 4 ? 70 : 45 }
+    
+    private func randomize() {
+        let palette: [Color] = [.red, .orange, .yellow, .green, .blue, .purple, .pink, .teal, .indigo, .brown]
+        grid = (0..<size).map { _ in (0..<size).map { _ in palette.randomElement() ?? .blue } }
+    }
+    
+    private func clear() {
+        for r in 0..<size { for c in 0..<size { grid[r][c] = .white } }
+    }
+    
+    private func save() {
+        let flat = grid.flatMap { $0.map { $0.rgba() } }
+        UserDefaults.standard.set(flat, forKey: key)
+        UserDefaults.standard.set(size, forKey: key + "_size")
+    }
+    
+    private func load() {
+        let s = UserDefaults.standard.integer(forKey: key + "_size")
+        let loadedSize = (s == 4 || s == 6) ? s : size
+        let arr = UserDefaults.standard.stringArray(forKey: key) ?? []
+        
+        size = loadedSize
+        grid = Array(repeating: Array(repeating: .white, count: loadedSize), count: loadedSize)
+        if arr.count != loadedSize * loadedSize { return }
+        
+        var i = 0
+        for r in 0..<loadedSize {
+            for c in 0..<loadedSize {
+                grid[r][c] = Color.fromRGBA(arr[i]) ?? .white
+                i += 1
+            }
+        }
+    }
+}
+
+extension Color {
+    func rgba() -> String {
+        let ui = UIColor(self)
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        ui.getRed(&r, green: &g, blue: &b, alpha: &a)
+        return "\(r),\(g),\(b),\(a)"
+    }
+    
+    static func fromRGBA(_ s: String) -> Color? {
+        let p = s.split(separator: ",").compactMap { Double($0) }
+        if p.count != 4 { return nil }
+        return Color(.sRGB, red: p[0], green: p[1], blue: p[2], opacity: p[3])
+    }
+}</pre>
+        </details>
+    </details>
+    
+    <details>
+        <summary>🍳 Kitchen Rush Game</summary>
+        
+        <details>
+            <summary>💻 Swift Code - ContentView</summary>
+            <pre>import SwiftUI
+
+struct Recipe {
+    var name: String
+    var steps: [String]
+}
+
+struct ContentView: View {
+    
+    var recipes: [Recipe] = [
+        Recipe(name: "Burger", steps: ["Bun", "Patty", "Cheese"]),
+        Recipe(name: "Pizza", steps: ["Dough", "Sauce", "Cheese"]),
+        Recipe(name: "Salad", steps: ["Lettuce", "Tomato", "Dressing"])
+    ]
+    
+    @State private var currentRecipe: Recipe?
+    @State private var currentRecipeSteps: [String] = []
+    @State private var playerSelection: [String] = []
+    @State private var money: Int = 0
+    @State private var reputation: Int = 100
+    @State private var screen: String = "Home"
+    @State private var resultMessage: String = ""
+    
+    var body: some View {
+        ZStack {
+            Color(red: 0.95, green: 0.88, blue: 0.76)
+                .ignoresSafeArea()
+            
+            if screen == "Home" {
+                homeScreen
+            } else if screen == "Game" {
+                gameScreen
+            } else if screen == "Result" {
+                resultScreen
+            }
+        }
+    }
+    
+    var homeScreen: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            
+            VStack(spacing: 15) {
+                Text("Kitchen Rush")
+                    .font(.largeTitle)
+                    .bold()
+                
+                Text("Make orders correctly to earn money!")
+                    .multilineTextAlignment(.center)
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("How to Play:")
+                        .bold()
+                    Text("1. Read the recipe")
+                    Text("2. Click ingredients in order")
+                    Text("3. Submit your order")
+                    Text("4. Correct = +$10, Wrong = -10 reputation")
+                }
+                .padding()
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(10)
+                
+                Button(action: {
+                    StartNewRound()
+                    screen = "Game"
+                }) {
+                    Text("Start Game")
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                }
+            }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(20)
+            .padding()
+            
+            Spacer()
+        }
+    }
+    
+    var gameScreen: some View {
+        VStack(spacing: 15) {
+            
+            HStack {
+                VStack {
+                    Text("Money")
+                    Text("$\(money)")
+                        .bold()
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                
+                VStack {
+                    Text("Reputation")
+                    Text("\(reputation)%")
+                        .bold()
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+            }
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Order: \(currentRecipe?.name ?? "")")
+                    .bold()
+                
+                Text("Recipe:")
+                    .bold()
+                
+                ForEach(currentRecipeSteps.indices, id: \.self) { i in
+                    Text("\(i + 1). \(currentRecipeSteps[i])")
+                }
+                
+                Text("Your Selection:")
+                    .bold()
+                
+                Text(playerSelection.joined(separator: ", "))
+                    .foregroundColor(.gray)
+            }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(15)
+            
+            let allIngredients = Array(Set(recipes.flatMap { $0.steps }))
+            
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))], spacing: 10) {
+                ForEach(allIngredients, id: \.self) { ingredient in
+                    Button(action: {
+                        AddIngredient(ingredientName: ingredient)
+                    }) {
+                        Text(ingredient)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(8)
+                    }
+                }
+            }
+            
+            HStack {
+                Button("Clear") {
+                    playerSelection = []
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.gray.opacity(0.3))
+                .cornerRadius(10)
+                
+                Button("Submit") {
+                    let isCorrect = CheckOrder(recipeSteps: currentRecipeSteps,
+                                               selection: playerSelection)
+                    
+                    if isCorrect {
+                        money += 10
+                        resultMessage = "Correct! +$10"
+                    } else {
+                        reputation -= 10
+                        resultMessage = "Wrong order! -10 reputation"
+                    }
+                    
+                    screen = "Result"
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.green)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            }
+        }
+        .padding()
+    }
+    
+    var resultScreen: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            
+            Text(resultMessage)
+                .font(.title)
+                .bold()
+            
+            Text("Money: $\(money)")
+            Text("Reputation: \(reputation)%")
+            
+            Button("Play Again") {
+                if reputation <= 0 {
+                    resultMessage = "Game Over"
+                } else {
+                    StartNewRound()
+                    screen = "Game"
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.orange)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            
+            Button("End") {
+                screen = "Home"
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.gray)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            
+            Spacer()
+        }
+        .padding()
+    }
+    
+    func StartNewRound() {
+        playerSelection = []
+        if let randomRecipe = recipes.randomElement() {
+            currentRecipe = randomRecipe
+            currentRecipeSteps = randomRecipe.steps
+        }
+    }
+    
+    func AddIngredient(ingredientName: String) {
+        playerSelection.append(ingredientName)
+    }
+    
+    func CheckOrder(recipeSteps: [String], selection: [String]) -> Bool {
+        if selection.count != recipeSteps.count {
+            return false
+        }
+        for i in 0..<recipeSteps.count {
+            if selection[i] != recipeSteps[i] {
+                return false
+            }
+        }
+        return true
+    }
+}</pre>
+        </details>
+    </details>
+    
+    <details>
+        <summary>#️⃣ Binary Search Protocol</summary>
+        
+        <details>
+            <summary>💻 Swift Code</summary>
+            <pre>import Foundation
+
+let database = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+let targetID = 23
+
+var low = 0
+var high = database.count - 1
+var steps = 0
+var found = false
+var foundIndex = -1
+
+print("> SYSTEM: Starting Binary Search Protocol...")
+print("> Target ID: \(targetID)")
+print("> ----------------------------------------")
+
+while low <= high && !found {
+    steps += 1
+    let mid = (low + high) / 2
+    let value = database[mid]
+    
+    print("> Step \(steps): Checking Index [\(mid)] -> Value: \(value)")
+    
+    if value == targetID {
+        found = true
+        foundIndex = mid
+    } else if value < targetID {
+        low = mid + 1
+    } else {
+        high = mid - 1
+    }
+}
+
+print(">")
+
+if found {
+    print("> SUCCESS: User ID found at Index \(foundIndex)")
+    print("> EFFICIENCY: Operation completed in \(steps) steps.")
+}</pre>
+        </details>
+        <p><strong>What it does:</strong> This program implements the Binary Search algorithm to efficiently find a target value in a sorted array. It demonstrates how binary search reduces the search space by half with each step, making it much faster than linear search.</p>
+    </details>
+    
+    <details>
+        <summary>📚 AP CSP Unit 3</summary>
+        <p><a href="https://docs.google.com/document/d/1y4A0z1xPdjUPDQKU-dDvKXoZ_l1VegJj246B-m6o5P4/edit?usp=sharing" target="_blank">View Document</a></p>
+    </details>
+    
+    <details>
+        <summary>🎯 AP CSP Create Task – Stage 1</summary>
+        <p><a href="https://docs.google.com/document/d/1jZI2dvJGYjJlQVCBhWPUxDYpafwaXPkeAVUk3vbATfM/edit?usp=sharing" target="_blank">View Document</a></p>
+    </details>
+    
+    <details>
+        <summary>🎨 AP CSP Create Task – Stage 2 (Figma Design & Updates)</summary>
+        <p><a href="https://docs.google.com/document/d/1ixKPyeOJpdGtyHg1LxCLlMekjVLhaWs9H-jkvuSzrOw/edit?usp=sharing" target="_blank">View Document</a></p>
+    </details>
+    
+    <details>
+        <summary>💾 AP CSP Create Task – Stage 3</summary>
+        <p><a href="https://docs.google.com/document/d/1KpqP2mKgznZUReiMUqjU99UApVbS_oFWcqEG7yeY-f4/edit?usp=sharing" target="_blank">View Document</a></p>
+    </details>
+    
+    <details>
+        <summary>🎬 AP CSP Create Task – Stage 4</summary>
+        <p><a href="https://drive.google.com/file/d/1GcuIH3MIBWooGMWoJz9fODMOhbGVH-6j/view?usp=sharing" target="_blank">Video 1</a></p>
+        <p><a href="https://drive.google.com/file/d/17OzFCbCV_ZBdcXEeLvEKn6uBClaUl84V/view?usp=sharing" target="_blank">Video 2</a></p>
+    </details>
+    
+    <details>
+        <summary>💡 Big Idea 4</summary>
+        <p><a href="https://docs.google.com/document/d/1CdlssPEXuh0K4_p4EB36xeZNeNmgOD_6sumcLS6kM6Y/edit?usp=sharing" target="_blank">View Document</a></p>
+    </details>
+    
+    <details>
+        <summary>🏆 AP CSP Create Task – Final Stage</summary>
+        <p><a href="https://drive.google.com/file/d/1fnnYe0lrraAP-SqW-147xeFI4RsdMh50/view?usp=sharing" target="_blank">View Project</a></p>
+    </details>
+
+</section>
 
 </section>
 
