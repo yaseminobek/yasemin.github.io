@@ -227,6 +227,8 @@ https://drive.google.com/file/d/13wqEWAaiSiUl3A7MpCrqOTNbG7WoIEj0/view?usp=shari
 
  AP CSP Unit 3: https://docs.google.com/document/d/1y4A0z1xPdjUPDQKU-dDvKXoZ_l1VegJj246B-m6o5P4/edit?usp=sharing
 
+ AP CSP Create Task – Stage 1: https://docs.google.com/document/d/1jZI2dvJGYjJlQVCBhWPUxDYpafwaXPkeAVUk3vbATfM/edit?usp=sharing
+
  2- AP CSP Create Task – Stage 2 (Figma Design & Updates):
  
 https://docs.google.com/document/d/1ixKPyeOJpdGtyHg1LxCLlMekjVLhaWs9H-jkvuSzrOw/edit?usp=sharing
