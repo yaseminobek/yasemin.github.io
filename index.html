@@ -8,7 +8,7 @@
         <p><a href="https://drive.google.com/file/d/1ZFEoDpn8gAdiiHMqOKXq8pfNWeZa9u7Q/view?usp=sharing" target="_blank">Video</a></p>
         
         <details>
-            <summary>💻 Swift Code</summary>
+            <summary>💻 ContentView.swift</summary>
             <pre>import SwiftUI
 
 @main
@@ -270,13 +270,57 @@ extension Color {
     }
 }</pre>
         </details>
+
+        <details>
+            <summary>📦 Package.swift</summary>
+            <pre>// swift-tools-version: 5.9
+
+import PackageDescription
+import AppleProductTypes
+
+let package = Package(
+    name: "My App",
+    platforms: [
+        .iOS("18.1")
+    ],
+    products: [
+        .iOSApplication(
+            name: "My App",
+            targets: ["AppModule"],
+            displayVersion: "1.0",
+            bundleVersion: "1",
+            appIcon: .placeholder(icon: .location),
+            accentColor: .presetColor(.mint),
+            supportedDeviceFamilies: [
+                .pad,
+                .phone
+            ],
+            supportedInterfaceOrientations: [
+                .portrait,
+                .landscapeRight,
+                .landscapeLeft,
+                .portraitUpsideDown(.when(deviceFamilies: [.pad]))
+            ]
+        )
+    ],
+    targets: [
+        .executableTarget(
+            name: "AppModule",
+            path: ".",
+            swiftSettings: [
+                .enableUpcomingFeature("BareSlashRegexLiterals")
+            ]
+        )
+    ]
+)</pre>
+        </details>
     </details>
     
     <details>
         <summary>🍳 Kitchen Rush Game</summary>
         
         <details>
-            <summary>💻 Swift Code - ContentView</summary>
+            <summary>💻 ContentView.swift</summary>
             <pre>import SwiftUI
 
 struct Recipe {
@@ -519,13 +563,71 @@ struct ContentView: View {
     }
 }</pre>
         </details>
+
+        <details>
+            <summary>📦 MyApp.swift</summary>
+            <pre>import SwiftUI
+
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}</pre>
+        </details>
+
+        <details>
+            <summary>📦 Package.swift</summary>
+            <pre>// swift-tools-version: 5.9
+
+import PackageDescription
+import AppleProductTypes
+
+let package = Package(
+    name: "My App",
+    platforms: [
+        .iOS("18.1")
+    ],
+    products: [
+        .iOSApplication(
+            name: "My App",
+            targets: ["AppModule"],
+            displayVersion: "1.0",
+            bundleVersion: "1",
+            appIcon: .placeholder(icon: .paper),
+            accentColor: .presetColor(.blue),
+            supportedDeviceFamilies: [
+                .pad,
+                .phone
+            ],
+            supportedInterfaceOrientations: [
+                .portrait,
+                .landscapeRight,
+                .landscapeLeft,
+                .portraitUpsideDown(.when(deviceFamilies: [.pad]))
+            ]
+        )
+    ],
+    targets: [
+        .executableTarget(
+            name: "AppModule",
+            path: ".",
+            swiftSettings: [
+                .enableUpcomingFeature("BareSlashRegexLiterals")
+            ]
+        )
+    ]
+)</pre>
+        </details>
     </details>
     
     <details>
         <summary>#️⃣ Binary Search Protocol</summary>
         
         <details>
-            <summary>💻 Swift Code</summary>
+            <summary>💻 ContentView.swift</summary>
             <pre>import Foundation
 
 let database = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
@@ -565,6 +667,51 @@ if found {
     print("> EFFICIENCY: Operation completed in \(steps) steps.")
 }</pre>
         </details>
+
+        <details>
+            <summary>📦 Package.swift</summary>
+            <pre>// swift-tools-version: 5.9
+
+import PackageDescription
+import AppleProductTypes
+
+let package = Package(
+    name: "My App",
+    platforms: [
+        .iOS("18.1")
+    ],
+    products: [
+        .iOSApplication(
+            name: "My App",
+            targets: ["AppModule"],
+            displayVersion: "1.0",
+            bundleVersion: "1",
+            appIcon: .placeholder(icon: .box),
+            accentColor: .presetColor(.orange),
+            supportedDeviceFamilies: [
+                .pad,
+                .phone
+            ],
+            supportedInterfaceOrientations: [
+                .portrait,
+                .landscapeRight,
+                .landscapeLeft,
+                .portraitUpsideDown(.when(deviceFamilies: [.pad]))
+            ]
+        )
+    ],
+    targets: [
+        .executableTarget(
+            name: "AppModule",
+            path: ".",
+            swiftSettings: [
+                .enableUpcomingFeature("BareSlashRegexLiterals")
+            ]
+        )
+    ]
+)</pre>
+        </details>
+
         <p><strong>What it does:</strong> This program implements the Binary Search algorithm to efficiently find a target value in a sorted array. It demonstrates how binary search reduces the search space by half with each step, making it much faster than linear search.</p>
     </details>
     
