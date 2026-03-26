@@ -241,6 +241,8 @@ https://drive.google.com/file/d/17OzFCbCV_ZBdcXEeLvEKn6uBClaUl84V/view?usp=shari
 
 Big ıdea 4: https://docs.google.com/document/d/1CdlssPEXuh0K4_p4EB36xeZNeNmgOD_6sumcLS6kM6Y/edit?usp=sharing
 
+AP CSP Create Task – Final Stage: https://drive.google.com/file/d/1fnnYe0lrraAP-SqW-147xeFI4RsdMh50/view?usp=sharing
+
  </details>
 
 
