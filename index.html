@@ -666,15 +666,104 @@ print("Total movies: \(movies.count)")</pre>
 <section>
     <h2>My Projects 3</h2>
 
-        <details>
+      <details>
     <summary>🧠 Daily Focuses</summary>
-    <p>
-        <a href="https://drive.google.com/file/d/1zb0MvG2wohEMH-Y0mwGkAYnCnoI6xTP7/view" target="_blank">
-            View Project
-        </a>
-    </p>
-</details>
     
+    <details>
+        <summary>💻 Swift Code</summary>
+        <pre>import SwiftUI
+
+struct FocusCard: Identifiable {
+    let id = UUID()
+    let title: String
+    let imageName: String
+    let color: Color
+    let points: [String]
+}
+
+struct ContentView: View {
+    
+    let focusCards: [FocusCard] = [
+        FocusCard(
+            title: "Work Time",
+            imageName: "books.vertical.fill",
+            color: Color.blue.opacity(0.85),
+            points: ["45 min deep focus", "No phone", "Finish one task"]
+        ),
+        FocusCard(
+            title: "Brain Break",
+            imageName: "brain.head.profile",
+            color: Color.pink.opacity(0.75),
+            points: ["10 min walk", "Stretch", "Drink water"]
+        ),
+        FocusCard(
+            title: "Daily Sport",
+            imageName: "basketball.fill",
+            color: Color.orange.opacity(0.7),
+            points: ["20 min movement", "Any sport you like", "Track streak"]
+        ),
+        FocusCard(
+            title: "Eating Time",
+            imageName: "fork.knife",
+            color: Color.yellow.opacity(0.45),
+            points: ["Balanced meal", "No screens", "Eat slowly"]
+        )
+    ]
+    
+    @State private var selectedCardID: UUID? = nil
+    
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 25) {
+                
+                Text("Daily Focuses")
+                    .font(.largeTitle)
+                    .bold()
+                
+                LazyVGrid(columns: [
+                    GridItem(.flexible()),
+                    GridItem(.flexible())
+                ], spacing: 20) {
+                    
+                    ForEach(focusCards) { card in
+                        Button(action: {
+                            if selectedCardID == card.id {
+                                selectedCardID = nil
+                            } else {
+                                selectedCardID = card.id
+                            }
+                        }) {
+                            ZStack(alignment: .topLeading) {
+                                RoundedRectangle(cornerRadius: 25)
+                                    .fill(card.color)
+                                    .frame(height: selectedCardID == card.id ? 180 : 120)
+                                
+                                VStack(alignment: .leading) {
+                                    Text(card.title)
+                                        .foregroundColor(.white)
+                                        .bold()
+                                    
+                                    if selectedCardID == card.id {
+                                        ForEach(card.points, id: \.self) { point in
+                                            Text("• \(point)")
+                                                .foregroundColor(.white)
+                                        }
+                                    }
+                                }
+                                .padding()
+                            }
+                        }
+                    }
+                }
+                .padding()
+            }
+        }
+    }
+}</pre>
+    </details>
+
+    <p><strong>What it does:</strong> This SwiftUI project displays a set of daily focus categories as interactive cards. When a user taps on a card, it expands to reveal helpful tips for that activity. The app uses a grid layout, state management, and conditional rendering to create a clean and dynamic user experience.</p>
+</details>
     <details>
         <summary>✂️ Rock Paper Scissors</summary>
         <p><a href="https://docs.google.com/document/d/1gJdZXu1k6nbYsO0bEJpG9lM--ukgNF6rrSv9D4Ewzak/edit?usp=sharing" target="_blank">Document</a></p>
