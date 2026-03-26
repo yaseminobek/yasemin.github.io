@@ -7,6 +7,9 @@ struct Recipe {
 
 struct ContentView: View {
     
+    // LIST (COLLECTION):
+    // This array stores multiple Recipe objects.
+    // A list/collection is used to keep all recipes in one place.
     var recipes: [Recipe] = [
         Recipe(name: "Burger", steps: ["Bun", "Patty", "Cheese"]),
         Recipe(name: "Pizza", steps: ["Dough", "Sauce", "Cheese"]),
@@ -15,7 +18,11 @@ struct ContentView: View {
     
     @State private var currentRecipe: Recipe?
     @State private var currentRecipeSteps: [String] = []
+    
+    // LIST (COLLECTION):
+    // This array stores the ingredients chosen by the player.
     @State private var playerSelection: [String] = []
+    
     @State private var money: Int = 0
     @State private var reputation: Int = 100
     @State private var screen: String = "Home"
@@ -26,6 +33,9 @@ struct ContentView: View {
             Color(red: 0.95, green: 0.88, blue: 0.76)
                 .ignoresSafeArea()
             
+            // SELECTION:
+            // The program checks the value of "screen"
+            // and decides which screen to show.
             if screen == "Home" {
                 homeScreen
             } else if screen == "Game" {
@@ -113,6 +123,9 @@ struct ContentView: View {
                 Text("Recipe:")
                     .bold()
                 
+                // ITERATION:
+                // This loop goes through each step in the recipe
+                // and displays it on the screen.
                 ForEach(currentRecipeSteps.indices, id: \.self) { i in
                     Text("\(i + 1). \(currentRecipeSteps[i])")
                 }
@@ -127,9 +140,15 @@ struct ContentView: View {
             .background(Color.white)
             .cornerRadius(15)
             
+            // LIST (COLLECTION):
+            // This creates a list of all possible ingredients
+            // from every recipe.
             let allIngredients = Array(Set(recipes.flatMap { $0.steps }))
             
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))], spacing: 10) {
+                
+                // ITERATION:
+                // This loop creates one button for each ingredient.
                 ForEach(allIngredients, id: \.self) { ingredient in
                     Button(action: {
                         AddIngredient(ingredientName: ingredient)
@@ -156,6 +175,9 @@ struct ContentView: View {
                     let isCorrect = CheckOrder(recipeSteps: currentRecipeSteps,
                                                selection: playerSelection)
                     
+                    // SELECTION:
+                    // If the order is correct, the player earns money.
+                    // Otherwise, the player loses reputation.
                     if isCorrect {
                         money += 10
                         resultMessage = "Correct! +$10"
@@ -188,6 +210,10 @@ struct ContentView: View {
             Text("Reputation: \(reputation)%")
             
             Button("Play Again") {
+                
+                // SELECTION:
+                // If reputation is 0 or below, the game ends.
+                // Otherwise, a new round starts.
                 if reputation <= 0 {
                     resultMessage = "Game Over"
                 } else {
@@ -215,6 +241,9 @@ struct ContentView: View {
         .padding()
     }
     
+    // PROCEDURE (FUNCTION WITH PARAMETER):
+    // This function starts a new round by clearing the player's choices
+    // and choosing a random recipe from the recipes list.
     func StartNewRound() {
         playerSelection = []
         if let randomRecipe = recipes.randomElement() {
@@ -223,20 +252,38 @@ struct ContentView: View {
         }
     }
     
+    // PROCEDURE (FUNCTION WITH PARAMETER):
+    // Parameter: ingredientName
+    // This function adds the tapped ingredient to the player's selection list.
     func AddIngredient(ingredientName: String) {
         playerSelection.append(ingredientName)
     }
     
+    // PROCEDURE (FUNCTION WITH PARAMETERS):
+    // Parameters: recipeSteps, selection
+    // This function checks whether the player's order matches the correct recipe.
     func CheckOrder(recipeSteps: [String], selection: [String]) -> Bool {
+        
+        // ALGORITHM:
+        // Sequence:
+        // 1. Check if the lengths are equal.
+        // 2. Compare each ingredient one by one.
+        // 3. Return true if all ingredients match.
+        
+        // SELECTION:
         if selection.count != recipeSteps.count {
             return false
         }
+        
+        // ITERATION:
         for i in 0..<recipeSteps.count {
+            
+            // SELECTION:
             if selection[i] != recipeSteps[i] {
                 return false
             }
         }
+        
         return true
     }
 }
-
