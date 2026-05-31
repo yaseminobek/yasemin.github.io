@@ -119,7 +119,140 @@
 <!-- MY PROJECTS -->
 <section>
     <h2>My Projects</h2>
-    
+
+        <details>
+    <summary>🌱 EcoSort – AP CSP Final Project</summary>
+
+    <p><strong>Thematic Area:</strong> Environment and Environmental Protection</p>
+
+    <p>
+        <a href="https://docs.google.com/document/d/11i67GoCw4-jUOEPJB8SWUKWU--gTBip045WwPJxcUvU/edit?usp=sharing" target="_blank">
+            📄 Project Report
+        </a>
+    </p>
+
+    <p>
+        <a href="https://docs.google.com/document/d/19E1YqSudWVRawRP_wqyrhcfDPqtW23KoenWwH73srKc/edit?usp=sharing" target="_blank">
+            💻 Swift Source Code
+        </a>
+    </p>
+
+    <p>
+        <a href="https://drive.google.com/file/d/135OyANCyPbIcdzKY9d4tQalJO5wrA5GV/view?usp=sharing" target="_blank">
+            🎥 Demo Video
+        </a>
+    </p>
+
+    <p>
+        EcoSort is an educational iOS application developed in SwiftUI.
+        The app teaches users how to correctly sort waste into recycling,
+        compost, and trash bins. Users answer questions about common
+        household items and receive instant feedback.
+    </p>
+
+    <details>
+        <summary>💻 EcoSort Swift Code</summary>
+
+<pre>
+import SwiftUI
+
+struct WasteItem {
+    let name: String
+    let correctBin: String
+    let explanation: String
+}
+
+struct ContentView: View {
+
+    let wasteItems = [
+        WasteItem(
+            name: "Plastic Bottle",
+            correctBin: "Recycling",
+            explanation: "Plastic bottles can usually be recycled."
+        ),
+        WasteItem(
+            name: "Banana Peel",
+            correctBin: "Compost",
+            explanation: "Banana peels decompose naturally."
+        ),
+        WasteItem(
+            name: "Glass Jar",
+            correctBin: "Recycling",
+            explanation: "Glass jars can be recycled."
+        ),
+        WasteItem(
+            name: "Used Tissue",
+            correctBin: "Trash",
+            explanation: "Used tissues cannot be recycled."
+        )
+    ]
+
+    let bins = ["Recycling", "Compost", "Trash"]
+
+    @State private var currentIndex = 0
+    @State private var score = 0
+    @State private var feedback = ""
+
+    var body: some View {
+        VStack(spacing: 20) {
+
+            Text("EcoSort")
+                .font(.largeTitle)
+                .bold()
+
+            if currentIndex < wasteItems.count {
+
+                Text(wasteItems[currentIndex].name)
+                    .font(.title)
+
+                ForEach(bins, id: \.self) { bin in
+                    Button(bin) {
+                        checkAnswer(selectedBin: bin)
+                    }
+                }
+
+                Text(feedback)
+
+                Button("Next") {
+                    nextQuestion()
+                }
+
+                Text("Score: \\(score)")
+            }
+            else {
+
+                Text("Quiz Finished!")
+                    .font(.title)
+
+                Text("Final Score: \\(score)/\\(wasteItems.count)")
+            }
+        }
+        .padding()
+    }
+
+    func checkAnswer(selectedBin: String) {
+        if selectedBin == wasteItems[currentIndex].correctBin {
+            score += 1
+            feedback = "Correct!"
+        } else {
+            feedback = "Try again."
+        }
+    }
+
+    func nextQuestion() {
+        if currentIndex < wasteItems.count - 1 {
+            currentIndex += 1
+            feedback = ""
+        } else {
+            currentIndex = wasteItems.count
+        }
+    }
+}
+</pre>
+
+    </details>
+
+</details>
     <details>
         <summary>📹 Video Project</summary>
         <p><a href="https://drive.google.com/file/d/1CfISpXEdErXukGdaux8WMcPuQCSN4EzL/view?usp=sharing" target="_blank">Watch my video here</a></p>
